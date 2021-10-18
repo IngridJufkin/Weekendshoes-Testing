@@ -1,3 +1,5 @@
+//WEEKWNDSHOES PAGE TESTING
+
 const { By, Key, Builder } = require("selenium-webdriver");
 require("chromedriver");
 
