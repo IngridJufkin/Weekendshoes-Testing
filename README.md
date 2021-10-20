@@ -4,9 +4,13 @@ Testing https://www.weekendshoes.ee/ (Test2) and https://www.rademar.ee/ (Test)
 # Test requirements:
 
 1. Use at least 4 different Locators (css selector, id, class name / name, xpath) to create the test
-READ MORE: https://www.selenium.dev/documentation/webdriver/locating_elements/#element-selection-strategies
+
+  READ MORE: https://www.selenium.dev/documentation/webdriver/locating_elements/#element-selection-strategies
+
 2. Use at least one type of Wait between activities 
-READ MORE: https://www.selenium.dev/documentation/webdriver/waits/
+
+  READ MORE: https://www.selenium.dev/documentation/webdriver/waits/
+
 3. Console log the console for every action the script does (Click / Sendkeys)
 
 # STEP BY STEP TESTING
