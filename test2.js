@@ -31,6 +31,7 @@ async function example() {
   //4. Opening product page from wishlist
   //Clicking wishlist
   await driver.sleep(5000);
+  //await driver.manage().setTimeouts( { implicit: 10000 } );
   await driver.findElement(By.xpath('//*[@id="wishlist-link-mobile"]')).click();
   // await driver.findElement(By.xpath('//*[@id="wishlist-link-mobile"]')).click();
   console.log("4. Clicking wishlist...");
@@ -39,34 +40,40 @@ async function example() {
   await driver.findElement(By.xpath('//*[@id="miniwishlist-content-wrapper-mobile"]/div/div/div/button')).click();
   console.log("5. Opening wishlist...");
   await driver.sleep(5000);
+  //await driver.manage().setTimeouts( { implicit: 10000 } );
   //4.2 Opening product from wishlist
   let wishlistProduct = await driver.findElement(By.className("product-item-link"));
   driver.executeScript("arguments[0].click()", wishlistProduct);
   console.log("5.1. Opening product form wishlist...Opened");
 
   //5. scrollimine kuni drowdownini Scroll to dropdown menu
-  await driver.sleep(5000);
+  //await driver.sleep(5000);
+  await driver.manage().setTimeouts( { implicit: 5000 } );
   let testEle = await driver.findElement(By.xpath('//*[@id="product-options-wrapper"]/div/div/div/div'));
   driver.executeScript("arguments[0].scrollIntoView()", testEle);
   console.log("5. Scroll me down");
 
   //5.1 opening dropdown menu
-  await driver.sleep(5000);
+  //await driver.sleep(5000);
+  await driver.manage().setTimeouts( { implicit: 5000 } );
   await driver.findElement(By.xpath('//*[@id="product-options-wrapper"]/div/div/div/div')).click();
   console.log("5.1 Opening size dropdown menu...");
 
   //5.2 Choosing size...
-  await driver.sleep(5000);
+  //await driver.sleep(5000);
+  await driver.manage().setTimeouts( { implicit: 5000 } );
   await driver.findElement(By.xpath('//*[@id="product-options-wrapper"]/div/div/div/div/div[3]/div/ul/li[4]')).click();
   console.log("5.2 Choosing size...");
 
   //5.3 Adding to Shopping Cart
-  await driver.sleep(4000);
+  await driver.manage().setTimeouts( { implicit: 4000 } );
+  //await driver.sleep(4000);
   await driver.findElement(By.xpath('//*[@id="product-addtocart-button"]')).click();
   console.log("5.3. Adding product to Shopping chart...");
 
   //6. Opening shopping cart
   await driver.sleep(5000);
+  await driver.manage().setTimeouts( { implicit: 5000 } );
   let shoppingChart = await driver.findElement(By.xpath('//*[@id="minicart-content-wrapper"]/div[2]/div[4]/div/a'));
   driver.executeScript("arguments[0].click()", shoppingChart);
   console.log("6. Opening shopping chart...");
@@ -77,25 +84,29 @@ async function example() {
   console.log("7. Adding +1 product...");
 
   //8.Deleting products from shopping cart...
-  await driver.sleep(5000);
+  //await driver.sleep(5000);
+  await driver.manage().setTimeouts( { implicit: 5000 } );
   await driver.findElement(By.className("action action-delete")).click();
   console.log("8. Deleting products from shopping cart...");
 
   //9. Opening search...and searching string
   //9. Openging search
-  await driver.sleep(3000);
+  //await driver.sleep(3000);
+  await driver.manage().setTimeouts( { implicit: 3000 } );
   await driver.findElement(By.className("block-search-trigger bottom")).click();
   console.log("9. Opening search...");
 
   //9.1 Searching string...
-  await driver.sleep(3000);
+  //await driver.sleep(3000);
+  await driver.manage().setTimeouts( { implicit: 3000 } );
   let searchString = "Jope";
   //await driver.findElement(By.id("search")).sendKeys(searchString);
   await driver.findElement(By.id("search")).sendKeys(searchString, Key.RETURN);
   console.log("9.1 Searching for Jope...");
 
   //10. Filter products by bestsellers
-  await driver.sleep(3000);
+  //await driver.sleep(3000);
+  await driver.manage().setTimeouts( { implicit: 3000 } );
   await driver.findElement(By.css("#sorter > option:nth-child(1)")).click();
   console.log("10. Filtering bestsellers...");
 }
